@@ -8,7 +8,7 @@ export default class accuWeather {
         let url = "https://dataservice.accuweather.com/locations/v1/cities/autocomplete"
         let results = await axios.get(url, {
             params: {
-              apikey: 'mCzmCuzMmsGz9cL6x4rVqUheFJ0l9WAI',
+              apikey: 'qi6PRflc0jKo0pnMAT5asQDX0ULRIEBh',
               q:query
             }
         })
@@ -19,7 +19,7 @@ export default class accuWeather {
         let url =`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}`
         let results = await axios.get(url, {
             params: {
-              apikey: 'mCzmCuzMmsGz9cL6x4rVqUheFJ0l9WAI',
+              apikey: 'qi6PRflc0jKo0pnMAT5asQDX0ULRIEBh',
               details: true,
               metric: store.state.isMetric
 
@@ -32,7 +32,7 @@ export default class accuWeather {
         let url =`https://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}`
         let results = await axios.get(url, {
             params: {
-              apikey: 'mCzmCuzMmsGz9cL6x4rVqUheFJ0l9WAI',
+              apikey: 'qi6PRflc0jKo0pnMAT5asQDX0ULRIEBh',
               details: true,
               metric: store.state.isMetric
 
