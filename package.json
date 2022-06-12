@@ -1,11 +1,14 @@
 {
   "name": "weather",
   "version": "0.1.0",
+  "homepage": "http://darkmift.github.io/sagi-cohen-09-06-2022",
   "engines": {
     "node": "16.x"
   },
   "private": true,
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
@@ -28,6 +31,7 @@
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "gh-pages": "^4.0.0",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "vue-cli-plugin-bootstrap-vue": "~0.8.2"
