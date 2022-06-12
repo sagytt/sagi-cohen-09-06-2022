@@ -5,7 +5,7 @@ import store from '../store'
 export default class accuWeather {
 
     async suggestLocation(query){
-        let url = "http://dataservice.accuweather.com/locations/v1/cities/autocomplete"
+        let url = "https://dataservice.accuweather.com/locations/v1/cities/autocomplete"
         let results = await axios.get(url, {
             params: {
               apikey: 'mCzmCuzMmsGz9cL6x4rVqUheFJ0l9WAI',
@@ -16,7 +16,7 @@ export default class accuWeather {
     }
 
     async getFiveDayForecast(locationKey){
-        let url =`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}`
+        let url =`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}`
         let results = await axios.get(url, {
             params: {
               apikey: 'mCzmCuzMmsGz9cL6x4rVqUheFJ0l9WAI',
@@ -29,7 +29,7 @@ export default class accuWeather {
     }
 
     async getFavouriteData(locationKey){
-        let url =`http://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}`
+        let url =`https://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}`
         let results = await axios.get(url, {
             params: {
               apikey: 'mCzmCuzMmsGz9cL6x4rVqUheFJ0l9WAI',
