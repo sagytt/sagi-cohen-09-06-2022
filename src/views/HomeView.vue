@@ -26,7 +26,6 @@
           <button type="button" class="btn" @click="toggleFavourite()"><i class="bi bi-heart-fill" :style="{color: isFavourite()?'red':'grey'}"></i> {{isFavourite() ?  'Remove from Favourites': 'Add to Favourites'}}</button>
         </div>
       </div>
-
       <div>
         <div style="display: flex; align-items: center; justify-content: center;">
           <h1 v-if="forecasts[0]">{{forecasts[0]['Day']['LongPhrase']}}</h1>
