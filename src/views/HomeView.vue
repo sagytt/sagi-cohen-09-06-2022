@@ -16,7 +16,7 @@
     <div>
       <div class="top" v-if="forecasts[0]">
         <div style="display: flex">
-          <img :src="'https://developer.accuweather.com/sites/default/files/'+forecasts[0]['Day']['Icon']+'-s.png'" width="150" height="90" alt="">
+          <img :src="'../assets/images/'+forecasts[0]['Day']['Icon']+'-s.png'" width="150" height="90" alt="">
           <div >
             <h4 v-if="location">{{location.LocalizedName}}</h4>
             <h4>{{forecasts[0]["Temperature"]["Maximum"]["Value"]}} {{forecasts[0]["Temperature"]["Maximum"]["Unit"]}}</h4>
