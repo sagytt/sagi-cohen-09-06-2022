@@ -80,7 +80,8 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({favourites: 'getFavourites'})},
+    ...mapGetters({ favourites: "getFavourites", isMetric: "isMetric" }),
+  },
   methods:{
     ...mapActions(['removeFavourite', 'addFavourite']),
     isFavourite(){
@@ -105,7 +106,7 @@ export default {
         setInterval(()=>{this.showModal=false}, 2000)
       }
     }
-    }, 
+    },
   watch: {
     async query(newQuery, oldQuery){
       let loc = this.results.filter(s => s?.LocalizedName === newQuery)[0];
@@ -114,7 +115,7 @@ export default {
       }else{
         if(newQuery.length > 2){
           this.results = await service.suggestLocation(newQuery);
-        }  
+        }
       }
     },
     async location(newVal, oldVal){
@@ -122,7 +123,11 @@ export default {
       this.forecasts = await service.getFiveDayForecast(newVal["Key"]);
       this.isFavourite(this.location["Key"]);
 
-    }
+    },
+    async isMetric(newVal, oldVal) {
+      if (newVal === oldVal) return;
+      this.forecasts = await service.getFiveDayForecast(this.location["Key"]);
+    },
   },
   async mounted(){
     this.forecasts = await service.getFiveDayForecast(this.location["Key"]);
