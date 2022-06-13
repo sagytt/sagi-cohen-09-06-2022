@@ -8,7 +8,7 @@
             <h5 class="card-title">{{location.LocalizedName}}</h5>
             <p class="card-text">{{data.Temperature.Maximum.Value}} {{data.Temperature.Maximum.Unit}}</p>
         </div>
-        <img v-if="data" :src="'/assets/images/'+data['Day']['Icon']+'-s.png'" width="150" height="90" style="margin:auto" alt="...">
+        <img v-if="data" :src="'./assets/images/'+data['Day']['Icon']+'-s.png'" width="150" height="90" style="margin:auto" alt="...">
         <div v-if="data" class="card-body">
             <h5 class="card-title">{{location.LocalizedName}}</h5>
             <p class="card-text">{{data.Day.LongPhrase}}</p>
